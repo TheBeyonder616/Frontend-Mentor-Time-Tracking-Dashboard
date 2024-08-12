@@ -1,0 +1,348 @@
+:root {
+  /* ### Neutral */
+  --cr-Blue: hsl(246, 80%, 60%);
+
+  /* # Activities */
+  --crl-Work: hsl(15, 100%, 70%);
+  --crl-Play: hsl(195, 74%, 62%);
+  --crl-Study: hsl(348, 100%, 68%);
+  --crl-Exercise: hsl(145, 58%, 55%);
+  --crl-Social: hsl(264, 64%, 52%);
+  --crl-Selfcare: hsl(43, 84%, 65%);
+
+  /* ### Primary */
+  --crl-Primary-dark: hsl(226, 43%, 10%);
+  --crl-Primary-light: hsl(235, 46%, 20%);
+  --crl-Seconday-dark: hsl(235, 45%, 61%);
+  --crl-Secondary-light: hsl(236, 100%, 87%);
+
+  /* Font */
+  --font-size: clamp(1.5rem, 2vw, 2rem);
+  --font-Bold: 500;
+  --font-Mid: 400;
+  --font-Small: 300;
+
+  /* Size*/
+  --width: clamp(29rem, 100%, 40rem);
+}
+
+/* ------------------------------------Reset */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  line-height: 1.6;
+  background-color: var(--crl-Primary-dark);
+}
+
+/* ------------------------------------Base*/
+
+.tracking-dashboard {
+  width: 90%;
+  margin: 5rem auto;
+}
+
+.tracking-dashboard__header {
+  width: var(--width);
+  background-color: var(--crl-Primary-light);
+  border-radius: 1rem;
+  margin: 0 auto;
+}
+
+.tracking-dashboard__header figure {
+  background-color: var(--cr-Blue);
+  padding: 2rem;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.tracking-dashboard__header figure div {
+  width: 7rem;
+  height: 7rem;
+  outline: 0.3rem solid var(--crl-Secondary-light);
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.tracking-dashboard__header figure div img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  font-style: italic;
+  display: block;
+}
+
+.tracking-dashboard__header figure figcaption h1 {
+  font-size: var(--font-size);
+  font-weight: var(--font-Small);
+  color: var(--crl-Secondary-light);
+  line-height: 1.3;
+}
+
+.tracking-dashboard__header figure figcaption h1 span {
+  display: block;
+  font-size: calc(var(--font-size) * 1.5);
+  color: var(--crl-Secondary-light);
+  font-weight: var(--font-Mid);
+}
+
+.tracking-dashboard__header-list {
+  background-color: var(--crl-Primary-light);
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  padding: 2.5rem 3rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.tracking-dashboard__header-list li {
+  list-style: none;
+}
+
+.tracking-dashboard__header-list li a,
+.tracking-dashboard__header-list li a:visited,
+.tracking-dashboard__header-list li a:link {
+  text-decoration: none;
+  cursor: pointer;
+  color: var(--crl-Seconday-dark);
+  font-size: var(--font-size);
+  font-weight: var(--font-Mid);
+}
+
+.tracking-dashboard__header-list li a:hover,
+.tracking-dashboard__header-list li a:focus {
+  color: var(--crl-Secondary-light);
+}
+
+/*----------------------------------------Activies */
+.tracking-dashboard__activities {
+  width: var(--width);
+  margin: 1rem auto;
+  border-radius: 1rem;
+}
+
+/* the background for the diffrent activites */
+.tracking-dashboard__activities.work {
+  background-color: var(--crl-Work);
+}
+.tracking-dashboard__activities.play {
+  background-color: var(--crl-Play);
+}
+.tracking-dashboard__activities.study {
+  background-color: var(--crl-Study);
+}
+.tracking-dashboard__activities.exercise {
+  background-color: var(--crl-Exercise);
+}
+.tracking-dashboard__activities.social {
+  background-color: var(--crl-Social);
+}
+.tracking-dashboard__activities.selfcare {
+  background-color: var(--crl-Selfcare);
+}
+
+.tracking-dashboard__activities div.svg {
+  padding: 1.8rem;
+  border-radius: 1rem;
+  background-repeat: no-repeat;
+  background-position: right;
+  background-position-x: 95%;
+}
+/* for the activites */
+.tracking-dashboard__activities div.svg.work {
+  background-image: url(./images/icon-work.svg);
+}
+
+.tracking-dashboard__activities div.svg.play {
+  background-image: url(./images/icon-play.svg);
+}
+
+.tracking-dashboard__activities div.svg.study {
+  background-image: url(./images/icon-study.svg);
+}
+
+.tracking-dashboard__activities div.svg.exercise {
+  background-image: url(./images/icon-exercise.svg);
+}
+
+.tracking-dashboard__activities div.svg.social {
+  background-image: url(./images/icon-social.svg);
+}
+
+.tracking-dashboard__activities div.svg.selfcare {
+  background-image: url(./images/icon-self-care.svg);
+}
+
+.tracking-dashboard__activities article {
+  background-color: var(--crl-Primary-light);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 1rem;
+  padding: 2rem;
+  color: var(--crl-Secondary-light);
+}
+
+@media only screen and (min-width: 64em) {
+  .tracking-dashboard__activities article {
+    position: relative;
+    padding-bottom: 4rem;
+  }
+  .tracking-dashboard__activities article section p {
+    position: absolute;
+    bottom: 8%;
+    left: 7%;
+  }
+}
+
+.tracking-dashboard__activities article h2 {
+  font-size: var(--font-size);
+  font-weight: var(--font-Bold);
+}
+
+@media only screen and (min-width: 64em) {
+  .tracking-dashboard__activities article h2 {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+.tracking-dashboard__activities article h2 time {
+  display: block;
+  font-size: calc(var(--font-size) * 2);
+  font-weight: var(--font-Small);
+}
+
+@media only screen and (min-width: 64em) {
+  .tracking-dashboard__activities article h2 time {
+    font-size: calc(var(--font-size) * 2.3);
+  }
+}
+
+.tracking-dashboard__activities article section {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1.8rem;
+}
+@media only screen and (min-width: 64em) {
+  .tracking-dashboard__activities article section {
+    justify-content: space-between;
+    flex-direction: column;
+    min-height: 8vw;
+  }
+}
+
+.tracking-dashboard__activities article section div {
+  width: clamp(2rem, 4vw, 4rem);
+  overflow: hidden;
+}
+.tracking-dashboard__activities article section div img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.tracking-dashboard__activities article section p {
+  font-size: calc(var(--font-size) * 0.8);
+  font-weight: var(--font-Small);
+}
+
+/* Desktop size 1024px */
+@media only screen and (min-width: 64em) {
+  .tracking-dashboard {
+    --width: clamp(29rem, 100%, 30rem);
+    width: 95%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(auto-fill, calc(var(--width) + 1rem));
+  }
+
+  .tracking-dashboard__header {
+    grid-area: 1/1/3/2;
+    height: 100%;
+  }
+
+  .tracking-dashboard__header figure {
+    min-height: 8vw;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-around;
+    padding-bottom: 5rem;
+  }
+
+  .tracking-dashboard__header figure figcaption h1 span {
+    font-size: calc(var(--font-size) * 2);
+  }
+
+  .tracking-dashboard__header-list {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+/* ---------------------------------------------Footer */
+.attribution {
+  --font: calc(clamp(1.5rem, 1.6vw, 1.9rem) * 0.8);
+  font-size: var(--font);
+  text-align: center;
+  color: var(--cr-Blue);
+  margin: 1rem auto;
+  font-weight: var(--font-Bold);
+}
+.attribution a,
+.attribution a:active,
+.attribution a:link {
+  text-decoration: none;
+  cursor: pointer;
+  color: var(--crl-Selfcare);
+  animation: magestic 2s infinite 2s;
+}
+
+.attribution a:hover,
+.attribution a:focus {
+  color: var(--crl-Exercise);
+}
+
+@keyframes magestic {
+  0%,
+  30% {
+    transform: translate(0);
+  }
+  49.99% {
+    --shadow: var(--crl-Social);
+    border-radius: 1rem;
+    border: 0;
+    box-shadow: inset 0 0.5rem 1rem var(--shadow);
+  }
+  50%,
+  100% {
+    transform: translate(1rem);
+  }
+}
+
+/*--------------------------DOM State */
+.currentstate {
+  color: var(--cr-Blue) !important;
+  font-weight: var(--font-Bold) !important;
+  filter: saturate(20deg) !important;
+  text-decoration: line-through !important;
+  transition: color 0.3s ease,
+    font-weight 0.1s cubic-bezier(0.075, 0.82, 0.165, 1), box-shadow 0.2s ease;
+}
